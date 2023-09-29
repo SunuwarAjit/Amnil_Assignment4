@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "cap",
+    "price": 100,
+    "desc": "this is cap",
+    "quantity": 5,
+    "type": "clothing"
+  },
+  {
+    "id": 2,
+    "name": "jeans",
+    "price": 200,
+    "desc": "this is jeans",
+    "quantity": 4,
+    "type": "clothing"
+  },
+  {
+    "id": 3,
+    "name": "rice",
+    "price": 100,
+    "desc": "this is a rice",
+    "quantity": 20,
+    "type": "food"
+  },
+  {
+    "id": 4,
+    "name": "daal",
+    "price": 60,
+    "desc": "this is daal",
+    "quantity": 10,
+    "type": "food"
+  },
+  {
+    "id": 5,
+    "name": "phone",
+    "price": 500,
+    "desc": "this is a Watch",
+    "quantity": 5,
+    "type": "electronics"
+  },
+  {
+    "id": 6,
+    "name": "hat",
+    "price": 100,
+    "desc": "this is hat",
+    "quantity": 5,
+    "type": "clothing"
+  }
+]

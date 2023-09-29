@@ -1,0 +1,91 @@
+[
+  {
+    "id": 1,
+    "user_id": 4,
+    "items": [
+      {
+        "id": 1,
+        "name": "pant",
+        "price": 50,
+        "desc": "this is pant",
+        "quantity": 1,
+        "type": "clothing"
+      },
+      {
+        "id": 4,
+        "name": "earphone",
+        "price": 20,
+        "desc": "this is a earphone",
+        "quantity": 1,
+        "type": "electronics"
+      }
+    ],
+    "total_price": "70"
+  },
+  {
+    "id": 2,
+    "user_id": 2,
+    "items": [
+      {
+        "id": 1,
+        "name": "cap",
+        "price": 50,
+        "desc": "this is cap",
+        "quantity": 1,
+        "type": "clothing"
+      },
+      {
+        "id": 4,
+        "name": "watch",
+        "price": 100,
+        "desc": "this is a watch",
+        "quantity": 1,
+        "type": "electronics"
+      }
+    ],
+    "total_price": "150"
+  },
+  {
+    "id": 1,
+    "user_id": 1,
+    "items": [
+      {
+        "id": 1,
+        "name": "pant",
+        "price": 50,
+        "desc": "this is pant",
+        "quantity": 1,
+        "type": "clothing"
+      }
+    ],
+    "total_price": "100.00"
+  },
+  {
+    "user_id": 5,
+    "items": [
+      {
+        "id": 1,
+        "name": "cap",
+        "price": 50,
+        "desc": "this is cap",
+        "quantity": 2,
+        "type": "clothing"
+      }
+    ],
+    "total_price": "200.00"
+  },
+  {
+    "user_id": 6,
+    "items": [
+      {
+        "id": 1,
+        "name": "cap",
+        "price": 50,
+        "desc": "this is cap",
+        "quantity": 1,
+        "type": "clothing"
+      }
+    ],
+    "total_price": "100.00"
+  }
+]

@@ -1,0 +1,49 @@
+[
+    {
+      "id": 1,
+      "user_id": 3,
+      "items": [
+        {
+          "id": 1,
+          "name": "cap",
+          "price": 20,
+          "description": "this is cap",
+          "quantity": 5,
+          "product_type": "clothing"
+        },
+        {
+          "id": 2,
+          "name": "watch",
+          "price": 80,
+          "description": "this is watch",
+          "quantity": 2,
+          "product_type": "electronics"
+        }
+      ],
+      "total_price": "100"
+    },
+    {
+      "id": 1,
+      "user_id": 2,
+      "cart_id": 2,
+      "items": [
+        {
+          "id": 2,
+          "name": "watch",
+          "price": 80,
+          "description": "this is watch",
+          "quantity": 2,
+          "product_type": "electronics"
+        },
+        {
+          "id": 3,
+          "name": "banana",
+          "price": 10,
+          "description": "this is a banana",
+          "quantity": 10,
+          "product_type": "food"
+        }
+      ],
+      "total_price": "100"
+    }
+  ]
