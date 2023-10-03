@@ -38,4 +38,4 @@ const connectDB = async () => {
 
 connectDB();
 
-app.listen(PORT, () => console.log("Server: http://localhost:5000"));
+app.listen(PORT, () => console.log("Server: http://localhost:5001"));

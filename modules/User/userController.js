@@ -1,20 +1,4 @@
-const bodyParser = require("body-parser");
-const fs = require("fs");
-let users = require("../users.json");
-const path = require("path");
-const mongoose = require("mongoose");
-
-const userSchema = mongoose.Schema(
-  {
-    name: String,
-    lname: String,
-    age: Number,
-  },
-  { timestamps: true }
-);
-
-//model
-const Users = mongoose.model("Users", userSchema);
+const Users = require("../../models/userModel");
 
 exports.getUsers = async (req, res) => {
   const users = await Users.find();
@@ -35,7 +19,7 @@ exports.createUser = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
   const user = await Users.findOneAndDelete({ _id: req.params.id });
-  user.save();
+  //user.save();
   res.send(`User ${user.name} deleted`);
 };
 

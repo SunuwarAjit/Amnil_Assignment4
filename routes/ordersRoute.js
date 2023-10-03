@@ -6,7 +6,7 @@ const {
   checkout,
   getCart,
   getCarts,
-} = require("../controllers/Orders.js");
+} = require("../modules/Order/orderController.js");
 
 const router = express.Router();
 

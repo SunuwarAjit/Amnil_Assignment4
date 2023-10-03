@@ -1,24 +1,4 @@
-const bodyParser = require("body-parser");
-const fs = require("fs");
-let products = require("../products.json");
-const path = require("path");
-const mongoose = require("mongoose");
-
-//schema
-const productSchema = mongoose.Schema(
-  {
-    id: Number,
-    name: String,
-    price: Number,
-    desc: String,
-    quantity: Number,
-    type: String,
-  },
-  { timestamps: true }
-);
-
-//model
-const Products = mongoose.model("Products", productSchema);
+const Products = require("../../models/productModel");
 
 exports.getProducts = async (req, res) => {
   const products = await Products.find();
@@ -39,7 +19,7 @@ exports.createProduct = async (req, res) => {
 
 exports.deleteProduct = async (req, res) => {
   const product = await Products.findOneAndDelete({ _id: req.params.id });
-  product.save();
+  //product.save();
   res.send(`Product ${product.name} deleted`);
 };
 
