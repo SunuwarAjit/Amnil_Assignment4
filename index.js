@@ -1,15 +1,14 @@
-// import express from "express";
-// import bodyParser from "body-parser";
-// import userRoutes from "./routes/users.js";
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const userRouter = require("./routes/usersRoute.js");
 const productRouter = require("./routes/productsRoute.js");
 const orderRouter = require("./routes/ordersRoute.js");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const app = express();
-const PORT = 5001;
+const PORT = process.env.PORT;
 
 //middleware
 app.use(bodyParser.json());
@@ -23,9 +22,7 @@ app.get("/", (req, res) => {
 });
 
 const connectDB = async () => {
-  const connect = mongoose.connect(
-    "mongodb+srv://admin:mongodb12@cluster0.odh5zh4.mongodb.net/?retryWrites=true&w=majority"
-  );
+  const connect = mongoose.connect(process.env.MONGODB_URI);
   await connect.then(
     (db) => {
       console.log("Mongoose: Successful connection");
@@ -38,4 +35,4 @@ const connectDB = async () => {
 
 connectDB();
 
-app.listen(PORT, () => console.log("Server: http://localhost:5001"));
+app.listen(PORT, () => console.log(`Server: http://localhost:${PORT}`));
