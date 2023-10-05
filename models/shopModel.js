@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 //schema
 const shopSchema = mongoose.Schema(
   {
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: "Users" }, 
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "Users" }, 
     name: String,
     logo: {
       data:Buffer,
@@ -11,7 +11,7 @@ const shopSchema = mongoose.Schema(
     },
     type: {
         type: String,
-        enum: ["Electonics", "Grocery", "Clothing", "Stationery"],
+        enum: ["Electronics", "Grocery", "Clothing", "Stationery", "Fastfood"],
         default: "General"},
     quantity: Number,
     location: {
@@ -30,7 +30,8 @@ const shopSchema = mongoose.Schema(
 
 );
 
+shopSchema.index({location:"2dsphere"})
+
 //model
 const Shops = mongoose.model("Shop", shopSchema);
-
 module.exports = Shops;
