@@ -1,4 +1,5 @@
 const Products = require("../../models/productModel");
+const Images = require("../../models/imageModel");
 
 exports.getProducts = async (req, res) => {
   const products = await Products.find();
@@ -12,7 +13,10 @@ exports.getProduct = async (req, res) => {
 
 exports.createProduct = async (req, res) => {
   const { id, name, price, desc, quantity, type } = req.body;
-  const newProduct = new Products({ id, name, price, desc, quantity, type });
+  const newProduct = new Products({ id, name, price, desc, quantity, type, image:{
+    data:req.file.filename,
+    contentType:'image/jpeg'
+  } });
   await newProduct.save();
   res.status(200).send(`Product created ${newProduct}`);
 };

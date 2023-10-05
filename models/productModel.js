@@ -8,6 +8,10 @@ const productSchema = mongoose.Schema(
     desc: String,
     quantity: Number,
     type: String,
+    image:{
+      data:Buffer,
+      contentType: String
+    }
   },
   { timestamps: true }
 );

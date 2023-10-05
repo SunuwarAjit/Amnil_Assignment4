@@ -8,6 +8,7 @@ const orderSchema = mongoose.Schema(
         totalPrice: Number,
     },
     { timestamps: true }
+
   );
   
   //ordermodel
