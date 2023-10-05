@@ -11,7 +11,7 @@ const {
 
 router.get("/", getShops);
 router.post("/create", createShop);
-router.post("/NearMe", findNearest);
+router.post("/nearme", findNearest);
 router.get("/:id", getShop);
 //router.delete("/:id", deleteShop);
 //router.patch("/:id", updateShop);

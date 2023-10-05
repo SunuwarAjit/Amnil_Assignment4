@@ -48,6 +48,23 @@ exports.findNearest = async(req,res)=>{
 
   try {
     
+    const longitude = req.body.longitude;
+    const latitude = req.body.latitude;
+    const distance = req.body.distance || 1000
+
+    const nearShops = await Shops.aggregate([
+      {
+      $geoNear:{
+        near:{type:"Point", coordinates:[parseFloat(longitude), parseFloat(latitude)]},
+        //key:"location",
+        distanceField: 'distance',
+        maxDistance: parseFloat(distance),
+        spherical:true }
+      }
+    ]);
+
+    res.status(200).send({success:true, msg:"Store Details", data:nearShops})
+
   } catch (error) {
     res.status(400).send({success:false, msg:error.message})
   }

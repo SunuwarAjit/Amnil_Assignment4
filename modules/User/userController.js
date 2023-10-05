@@ -12,7 +12,8 @@ exports.getUser = async (req, res) => {
 
 exports.createUser = async (req, res) => {
   const { name, lname, age } = req.body;
-  const newUser = new Users({ name, lname, age, image:{
+  const newUser = new Users({ name, lname, age,
+    image:{
     data:req.file.filename,
     contentType:'image/jpeg'
   } });
