@@ -4,33 +4,34 @@ const mongoose = require("mongoose");
 const shopSchema = mongoose.Schema(
   {
     user: { type: mongoose.Schema.Types.ObjectId, ref: "Users" }, 
+    products: [{type: mongoose.Schema.Types.ObjectId, ref: 'Products'}],
     name: String,
     logo: {
-      data:Buffer,
-      contentType: String
+      data:Buffer
     },
     type: {
         type: String,
         enum: ["Electronics", "Grocery", "Clothing", "Stationery", "Fastfood"],
         default: "General"},
-    quantity: Number,
+    
     location: {
       type: {
-      type: String, // Don't do `{ location: { type: String } }`
-      enum: ['Point'], // 'location.type' must be 'Point'
-      required: true
-    },
+        type: String, // Don't do `{ location: { type: String } }`
+        default:'Point',
+        required: true
+      },
       coordinates: {
-      type: [Number],
-      required: true
-    }
+        type: [Number],
+        required: true,
+        index: '2dsphere'
+      }
     
     },
 }
 
 );
 
-shopSchema.index({location:"2dsphere"})
+//shopSchema.index({location:"2dsphere"})
 
 //model
 const Shops = mongoose.model("Shop", shopSchema);

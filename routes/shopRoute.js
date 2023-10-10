@@ -1,19 +1,23 @@
 const express = require("express");
 const router = express.Router();
+const upload = require("../helpers/imageUpload")
+const auth = require('../middleware/jwtauthentication')
 
 const {
   getShops,
   getShop,
   createShop,
-  findNearest
+  findNearest,
+  deleteShop,
+  updateShop
 
 } = require("../modules/Shop/shopController");
 
 router.get("/", getShops);
-router.post("/create", createShop);
+router.post("/create",upload, createShop);
 router.post("/nearme", findNearest);
 router.get("/:id", getShop);
-//router.delete("/:id", deleteShop);
-//router.patch("/:id", updateShop);
+router.delete("/:id", deleteShop);
+router.patch("/:id", updateShop);
 
 module.exports = router;
